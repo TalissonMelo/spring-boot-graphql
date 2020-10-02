@@ -7,4 +7,5 @@ type Query {
 
     hello:String!
 	client: Client
+	clients: [Client]
 }
