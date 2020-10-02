@@ -1,5 +1,10 @@
+type Client {
+	name: String 
+	email: String 
+}
+
 type Query {
 
     hello:String!
-
+	client: Client
 }
