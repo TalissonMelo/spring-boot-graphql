@@ -11,4 +11,5 @@ extend type Query {
 
 extend type Mutation {
 	saveClient(id:ID, name:String, email:String): Client
+	deleteClient(id:ID): Boolean
 }

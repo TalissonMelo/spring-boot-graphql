@@ -34,5 +34,9 @@ public class ClientGraphQL implements GraphQLQueryResolver, GraphQLMutationResol
 	public Client saveClient(Long id, String name, String email) {
 		return clientService.save(new Client(id, name, email));
 	}
+	
+	public Boolean deleteClient(Long id) {
+		return clientService.deleteClient(id);
+	}
 
 }
