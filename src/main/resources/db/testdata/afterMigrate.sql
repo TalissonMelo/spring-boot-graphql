@@ -21,3 +21,7 @@ insert into product (id, name, price) values (3, 'Bermuda', 60);
 insert into product (id, name, price) values (4, 'Camiseta', 80);
 insert into product (id, name, price) values (5, 'Chuteira', 130);
 
+insert into shopping (id, data, quantity, status, client_id, product_id) values (1, UTC_TIMESTAMP, 2,"OK",1,1);
+insert into shopping (id, data, quantity, status, client_id, product_id) values (2, UTC_TIMESTAMP, 4,"OK",2,3);
+insert into shopping (id, data, quantity, status, client_id, product_id) values (3, UTC_TIMESTAMP, 10,"OK",3,4);
+
