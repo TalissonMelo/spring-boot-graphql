@@ -21,9 +21,6 @@ public class QueryGraphQL implements GraphQLQueryResolver {
 	@Autowired
 	private ClientService clientService;
 	
-	public String hello() {
-		return "GraphQL";
-	}
 	
 	public Client client(Long id) {
 		return clientService.clientById(id);

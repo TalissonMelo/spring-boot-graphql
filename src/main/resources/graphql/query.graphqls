@@ -5,8 +5,6 @@ type Client {
 }
 
 type Query {
-
-    hello:String!
 	client(id: ID): Client
 	clients: [Client]
 }
