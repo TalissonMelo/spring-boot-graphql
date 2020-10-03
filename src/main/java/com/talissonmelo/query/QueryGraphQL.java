@@ -1,31 +1,36 @@
 package com.talissonmelo.query;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.talissonmelo.entity.Client;
+import com.talissonmelo.repository.ClientRepository;
+import com.talissonmelo.service.ClientService;
 
 
 @Component
-public class QueryGraphQL implements GraphQLQueryResolver{
+public class QueryGraphQL implements GraphQLQueryResolver {
+	
+	@Autowired
+	private ClientRepository clientRepository;
+
+	
+	@Autowired
+	private ClientService clientService;
 	
 	public String hello() {
 		return "GraphQL";
 	}
 	
-	public Client client() {
-		return new Client("Talisson Melo", "talisson.cursos@gmail.com");
+	public Client client(Long id) {
+		return clientService.clientById(id);
 	}
 	
 	public List<Client> clients(){
-		List<Client> list = new ArrayList<>();
-		for(int i =0; i < 10; i++) {
-				list.add(new Client("Cliente " + i , "cliente" + i + "@gmail.com" ));
-		}
-		return list;
+		return clientRepository.findAll();
 	}
 
 }
