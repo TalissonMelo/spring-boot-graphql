@@ -8,3 +8,7 @@ extend type Query {
 	client(id: ID): Client
 	clients: [Client]
 }
+
+extend type Mutation {
+	saveClient(id:ID, name:String, email:String): Client
+}

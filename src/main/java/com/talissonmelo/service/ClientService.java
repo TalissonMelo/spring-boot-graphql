@@ -15,4 +15,8 @@ public class ClientService {
 	public Client clientById(Long id) {
 		return repository.findById(id).orElseThrow(null);
 	}
+	
+	public Client save(Client client) {
+		return repository.save(client);
+	}
 }

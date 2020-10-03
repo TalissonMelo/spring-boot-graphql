@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.talissonmelo.entity.Client;
 import com.talissonmelo.repository.ClientRepository;
@@ -12,7 +13,7 @@ import com.talissonmelo.service.ClientService;
 
 
 @Component
-public class ClientGraphQL implements GraphQLQueryResolver {
+public class ClientGraphQL implements GraphQLQueryResolver, GraphQLMutationResolver {
 	
 	@Autowired
 	private ClientRepository clientRepository;
@@ -28,6 +29,10 @@ public class ClientGraphQL implements GraphQLQueryResolver {
 	
 	public List<Client> clients(){
 		return clientRepository.findAll();
+	}
+	
+	public Client saveClient(Long id, String name, String email) {
+		return clientService.save(new Client(id, name, email));
 	}
 
 }
