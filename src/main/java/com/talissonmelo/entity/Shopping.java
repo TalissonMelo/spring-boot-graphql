@@ -32,12 +32,12 @@ public class Shopping {
 	private String status;
 	
 	//RECOMENDAVEL SEMPRE USAR O FetchType.LAZY
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "client_id", nullable = false)
 	private Client client;
 	
 	//RECOMENDAVEL SEMPRE USAR O FetchType.LAZY
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "product_id", nullable = false)
 	private Product product;
 

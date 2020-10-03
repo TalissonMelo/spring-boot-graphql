@@ -1,8 +1,11 @@
 package com.talissonmelo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.talissonmelo.entity.Client;
 import com.talissonmelo.entity.Shopping;
 import com.talissonmelo.repository.ShoppingRepository;
 
@@ -27,5 +30,9 @@ public class ShoppingService {
 		}
 		return false;
 
+	}
+
+	public List<Shopping> findAllByClient(Client client) {
+		return repository.findAllByClient(client);
 	}
 }
