@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.talissonmelo.entity.Client;
 import com.talissonmelo.entity.Shopping;
+import com.talissonmelo.entity.dto.ShoppingReport;
 import com.talissonmelo.repository.ShoppingRepository;
 
 @Service
@@ -34,5 +35,9 @@ public class ShoppingService {
 
 	public List<Shopping> findAllByClient(Client client) {
 		return repository.findAllByClient(client);
+	}
+
+	public List<ShoppingReport> findAllShoppingReport() {
+		return repository.findAllShoppingReport();
 	}
 }

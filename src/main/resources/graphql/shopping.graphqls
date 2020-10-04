@@ -6,6 +6,13 @@ type Shopping {
 	product: Product! 
 }
 
+type ShoppingReport {
+	shoppingId: ID!
+	client: String!
+	product: String!
+	quantity: Int!
+}
+
 input ShoppingInput {
 	id: ID
 	quantity: Int! 
@@ -17,6 +24,7 @@ input ShoppingInput {
 extend type Query {
 	buy(id: ID!): Shopping
 	shopping: [Shopping]!
+	shoppingData: [ShoppingReport]
 }
 
 extend type Mutation {

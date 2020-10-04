@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.talissonmelo.entity.Shopping;
+import com.talissonmelo.entity.dto.ShoppingReport;
 import com.talissonmelo.entity.input.ShoppingInput;
 import com.talissonmelo.repository.ShoppingRepository;
 import com.talissonmelo.service.ClientService;
@@ -54,6 +55,10 @@ public class ShoppingGraphQL implements GraphQLQueryResolver, GraphQLMutationRes
 	
 	public Boolean deleteShopping(Long id) {
 		return service.deleteShopping(id);
+	}
+	
+	public List<ShoppingReport> shoppingData(){
+		return service.findAllShoppingReport();
 	}
 
 }
