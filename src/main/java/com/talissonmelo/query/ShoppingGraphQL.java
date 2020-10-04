@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
@@ -41,8 +43,9 @@ public class ShoppingGraphQL implements GraphQLQueryResolver, GraphQLMutationRes
 		return service.shoppingById(id);
 	}
 	
-	public List<Shopping> shopping(){
-		return repository.findAll();
+	public List<Shopping> shopping(Integer page, Integer size){
+		Pageable pageable = PageRequest.of(page, size);
+		return repository.findAll(pageable).getContent();
 	}
 	
 	public Shopping saveShopping(ShoppingInput shoppingInput) {

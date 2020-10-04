@@ -23,7 +23,7 @@ input ShoppingInput {
 
 extend type Query {
 	buy(id: ID!): Shopping
-	shopping: [Shopping]!
+	shopping(page:Int = 0, size:Int = 5): [Shopping]!
 	shoppingData: [ShoppingReport]
 }
 
