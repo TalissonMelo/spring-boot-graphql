@@ -3,6 +3,8 @@ schema{
 	mutation:Mutation
 }
 
+scalar Date
+
 type Query {
 	hello:String
 }

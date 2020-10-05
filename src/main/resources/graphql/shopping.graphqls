@@ -2,6 +2,7 @@ type Shopping {
 	id: ID
 	quantity: Int! 
 	status: String!
+	data: Date!
 	client: Client
 	product: Product! 
 }
